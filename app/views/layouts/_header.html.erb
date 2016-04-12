@@ -1,0 +1,36 @@
+<div id="fb-root"></div>
+<!-- Default-->
+<header>
+  <nav class="navbar navbar-default sticky">
+   <div class="container">
+    <div class="row">
+     <div class="col-xs-12 col-sm-5 col-md-5 col-lg-5">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+             <span class="icon-bar"></span>
+             <span class="icon-bar"></span>
+             <span class="icon-bar"></span>
+          </button>
+      <a href="#" class="logo work-logo"><img src="/assets/logo.png"/></a>
+    </div>
+     </div>
+     <div class="col-xs-12 col-sm-7 col-md-7 col-lg-7">
+    <div class="collapse navbar-collapse work-navbar" id="myNavbar">
+          <ul class="nav navbar-nav work-nav">
+          <% if params[:action] == "how_it_works" %>
+            <li><a href="/index">Home</a></li>
+            <li class="active"><a href="/how_it_works">How it works?</a></li>
+            <% elsif params[:action] == "index" %>
+            <li class="active" ><a href="/index">Home</a></li>
+            <li ><a href="/how_it_works">How it works?</a></li>
+            <% else %>
+            <li><a href="/index">Home</a></li>
+            <li><a href="/how_it_works">How it works?</a>
+            <% end %>
+         </ul>
+        </div>
+     </div>
+    </div>
+   </div>
+  </nav>
+</header>
