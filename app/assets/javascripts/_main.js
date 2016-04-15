@@ -7,8 +7,8 @@
  * Google+ - https://plus.google.com/u/0/109859280204979591787/about
  * Article URL: http://ihatetomatoes.net/simple-parallax-scrolling-tutorial/
  */
-
-( function( $ ) {
+$(document).ready(function(){
+  ( function( $ ) {
 	
 	// Setup variables
 	$window = $(window);
@@ -31,29 +31,25 @@
 	function adjustWindow(){
 		
 		// Init Skrollr
-		var s = skrollr.init({
-		    forceHeight: false,
-		    render: function(data) {
-		    
-		        //Debugging - Log the current scroll position.
-		        //console.log(data.curTop);
-		    }
+		$(document).on('page:load', function () {
+			skrollr.init().refresh('.homeSlide'); 
 		});
 		
 		// Get window size
 	    winH = $window.height();
 	    
-	    // Keep minimum height 550
-	    if(winH <= 650) {
-			winH = 650;
-		} 
+	 //    // Keep minimum height 550
+	 //    if(winH <= 650) {
+		// 	winH = 650;
+		// } 
 	    
-	    // Resize our slides
-	    $slide.height(winH);
+	 //    // Resize our slides
+	 //    $slide.height(winH);
 	    
-	    // Refresh Skrollr after resizing our sections
-	    s.refresh($('.homeSlide'));
+	 //    // Refresh Skrollr after resizing our sections
+	 //    s.refresh($('.homeSlide'));
 	    
 	}
 		
 } )( jQuery );
+});
