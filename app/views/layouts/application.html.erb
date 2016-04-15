@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html class="no-js" lang="en" >
 <head>
   <title>Swoope</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
@@ -33,7 +33,21 @@
   </head>
 <body class="loading" >
  <%= render 'layouts/header' %>
- <%= yield %>
+
+ <div class="flash_container">
+    <div id="messages">
+      <div class="message-container">
+        <% flash.each_with_index do |(k,v),i| %>
+            <div id="message-<%= i %>" class="actual-message_alert-<%= k.to_s.sub('_stay', '')  %>" style="color:red; text-align: center; font-size: 20px; padding-bottom: .2cm; "><%= raw v %>
+               <a  href="Swoope://"  class="btn btn-success" data-dismiss="alert">Open</a>
+             </div>   
+        <% end %>
+      </div>
+    </div>
+  </div>
+
+  <%= yield %>
+
  <%= render 'layouts/footer' %>
 </body>
 </html>

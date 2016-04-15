@@ -1,4 +1,4 @@
-default: &default
+defaults: &defaults
   adapter: postgresql
   username: postgres
   password: postgres
@@ -8,17 +8,13 @@ default: &default
   timeout: 5000
 
 development:
-  database: swoope_development
-  <<: *default
-
+  database: mpos_dev
+  <<: *defaults
 
 test:
-  database: swoope_test
-  <<: *default
-
+  database: mpos_test
+  <<: *defaults
 
 production:
-  database: swoope_production
-  <<: *default
-
-
+  database: mpos_production
+  <<: *defaults
