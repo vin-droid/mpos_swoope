@@ -16,5 +16,5 @@ test:
   <<: *defaults
 
 production:
-  database: mpos_production
+  database: mpos_dev
   <<: *defaults
