@@ -1,0 +1,18 @@
+development:
+  cloud_name: dttpcszfw
+  api_key: '783979952131656'
+  api_secret: aAmcipEiHLK-wtHUCc9v6CB_5mg
+  enhance_image_tag: true
+  static_image_support: false
+production:
+  cloud_name: dttpcszfw
+  api_key: '783979952131656'
+  api_secret: aAmcipEiHLK-wtHUCc9v6CB_5mg
+  enhance_image_tag: true
+  static_image_support: true
+test:
+  cloud_name: dttpcszfw
+  api_key: '783979952131656'
+  api_secret: aAmcipEiHLK-wtHUCc9v6CB_5mg
+  enhance_image_tag: true
+  static_image_support: false

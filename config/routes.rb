@@ -14,7 +14,7 @@ Rails.application.routes.draw do
   get '/how_it_works' => "homes#how_it_works"
   get '/our_story' => "homes#our_story"
 ###########################   VANUE CONTROLLER #######################
-  get '/vanues' => "vanues#index"
+  get '/venues' => "vanues#index"
   get '/vanues_details' => 'vanues#vanues_details'
   get '/vanues_map' => 'vanues#vanues_map'
 ###########################   BLOG CONTROLLER  #######################  
