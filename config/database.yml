@@ -8,7 +8,7 @@ defaults: &defaults
   timeout: 5000
 
 development:
-  database: mpos_dev
+  database: mpos_developement
   <<: *defaults
 
 test:
@@ -16,5 +16,5 @@ test:
   <<: *defaults
 
 production:
-  database: mpos_dev
+  database: mpos_production
   <<: *defaults

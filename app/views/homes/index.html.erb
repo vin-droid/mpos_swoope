@@ -1,32 +1,47 @@
-
 <main>
 	<section id="slide-1" class="homeSlide">
 		<div class="bcg" data-center="background-position: 50% 0px;" data-top-bottom="background-position: 50% -100px;" data-anchor-target="#slide-1">
 			<div class="hsContainer" >
-				<div class="hsContent slide-1" data-center="bottom: 200px; opacity: 1" data-top="bottom:1200px; opacity:1" data-anchor-target="#slide-1" >
+				<div class="hsContent slide-1" data-center="bottom: 200px; opacity: 1" data-top="bottom:1200px; opacity:0.3" data-anchor-target="#slide-1" >
 					<div class="container">
 						<div class="row">
-							<div class="col-sm-offset-4 col-sm-8 col-md-offset-5 col-md-7">
-								<h1 class="logo-title"><img src="/assets/logo-title.png"/></h1>
-								<div class="store-sec center">
-									<h4 class="store-availability">Available on App Store and Google Play</h4>
-									<div class="store-btn clearfix">
-										<a href="https://itunes.apple.com/gb/app/id1088581826" target="_blank"><i class="fa fa-apple"></i> App Store</a> 
-										<a href="#"><i class="fa fa-android"></i> Google Play</a>
+							<div class="col-sm-4 col-md-5">
+								<div class="wrapper">
+									<div class="inner-wrapper">
+										<div class="block-sec">
+											<div class="inner-text">
+												<div class="work-img">
+													<%=image_tag("landing-device.png") %>
+												</div>
+											</div>
+										</div>
 									</div>
-									<div class="gift-card">
-										<ul>
-											<li><img src="/assets/Amazon.png"></li>
-											<li><img src="/assets/iTunes.png"></li>
-											<li><img src="/assets/HSamuel.png"></li>
-											<li><img src="/assets/Ernestjones.png"></li>
-											<li><img src="/assets/House-of-fraser.png"></li>
-											<li><img src="/assets/TK-maxx.png"></li>
-											<li><img src="/assets/virgin.png"></li>
-											<li><img src="/assets/Zizzi.png"></li>
-											<li><img src="/assets/Ticketmaster.png"></li>
-											<li><img src="/assets/New_Look.png"></li>
-										</ul>
+								</div>
+							</div>
+							<div class="col-sm-8 col-md-7">
+								<div class="wrapper">
+									<div class="inner-wrapper">
+										<div class="block-sec">
+											<div class="inner-text">
+												<a href="#" class="logo work-logo"><%=image_tag("logo.png")%></a>
+												<div class="store-sec center">
+													<h1 class="store-availability">The savvy way to order and pay.</h1>
+													<div class="store-btn clearfix">
+														<a href="https://itunes.apple.com/gb/app/id1088581826">
+														<%=image_tag("app-store.png")%></a>
+														<a href="https://play.google.com/store/apps/details?id=swoope.co.uk&amp;hl=en"><%=image_tag("g-store.png")%></a>
+													</div>
+												</div>
+												<div class="postcode center clearfix">
+													<%=form_tag @venue ,class:"form-inline" do %>
+													  <div class="form-group">
+														<%=text_field_tag :vanue, "",class:"form-control", id:"postcode", placeholder:"Postcode" %>
+													  </div>
+													  <%=submit_tag "Find SWOOPE Venues",class:"btn btn-default venues-btn" %>
+													<% end%>
+												</div>
+											</div>
+										</div>
 									</div>
 								</div>
 							</div>
@@ -44,10 +59,17 @@
 					<div class="container">
 						<div class="row">
 							<div class="col-sm-offset-5 col-sm-7">
-								<div class="store-sec ic_click_sec">
-									<h4 class="ic_click">Click & Collect everything, <br>
-									queue for Nothing.</h4>
-									<p>SWOOPE allows you to order straight from your smartphone direct to your local retailers. This makes everything they sell click & collect. No more queuing for those everyday items, as they can be ready for you when you arrive!</p>
+								<div class="wrapper">
+									<div class="inner-wrapper">
+										<div class="block-sec">
+											<div class="inner-text">
+												<div class="store-sec ic_click_sec">
+													<h4 class="ic_click">SKIP THE QUEUE</h4>
+													<p>Order directly from your table. There’s no need to queue or search for a waiter - simply select your venue, open a tab and send your orders straight to the till. </p>
+												</div>
+											</div>
+										</div>
+									</div>
 								</div>
 							</div>
 						</div>
@@ -62,10 +84,20 @@
 			<div class="hsContainer">
 				<div class="hsContent" data--50-bottom="opacity: 0;" data--200-bottom="opacity:0;" data-center="opacity: 1" data-200-top="opacity: 1" data-anchor-target="#slide-3">
 					<div class="container">
-						<div class="table_sec">
-							<div class="store-sec table_service">
-								<h4 class="ic_table">Table service</h4>
-								<p>SWOOPE venues, like restaurants and bars, can offer tables service. So sit back, relax and let SWOOPE do the ordering for you. No need to queue or pay by cash anymore as you can do that all through your smartphone now. Time to enjoy yourself more.</p>
+						<div class="row">
+							<div class="col-sm-8">
+								<div class="wrapper">
+									<div class="inner-wrapper">
+										<div class="block-sec">
+											<div class="inner-text">
+												<div class="store-sec ic_click_sec">
+													<h4 class="Ic_heart">PAY WHEN YOU’RE READY </h4>
+													<p>SWOOPE is a secure mobile wallet that also integrates Apple Pay, PayPal and contactless payment – so you can settle the bill in one simple tap. </p>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
 							</div>
 						</div>
 					</div>
@@ -80,10 +112,18 @@
 				<div class="hsContent" data-bottom-top="opacity: 0" data-25p-top="opacity: 0" data-top="opacity: 1"  data-anchor-target="#slide-4">
 					<div class="container">
 						<div class="row">
-							<div class="col-sm-offset-5 col-sm-7">
-								<div class="store-sec ic_click_sec">
-									<h4 class="Ic_heart">Wish list shopping</h4>
-									<p>When you are out shopping, simply add a product to your “Wishlist” and SWOOPE will search for the closest one on sale right now. The unique technology also knows when you are walking past a store that’s selling exactly what you’re hunting for, and will immediately alert you so you never miss out on a sale item again.   </p>
+							<div class="col-sm-8 col-sm-offset-4">
+								<div class="wrapper">
+									<div class="inner-wrapper">
+										<div class="block-sec">
+											<div class="inner-text">
+												<div class="store-sec ic_click_sec">
+													<h4 class="Ic_Rewards">SPLIT THE BILL </h4>
+													<p>Invite people to join your tab and when you’re ready, spilt the bill with them or only pay for what you ordered. No counting cash, no I.O.U.s, no hassle. </p>
+												</div>
+											</div>
+										</div>
+									</div>
 								</div>
 							</div>
 						</div>
@@ -98,10 +138,18 @@
 				<div class="hsContent" data-center="opacity: 1" data-center-top="opacity: 0" data--100-bottom="opacity:1;" data-anchor-target="#slide-5">
 					<div class="container">
 						<div class="row">
-							<div class="col-sm-7">
-								<div class="store-sec ic_click_sec">
-									<h4 class="Ic_Rewards">Loyalty Rewards</h4>
-									<p>SWOOPE is all about keeping business local. So we want to reward customers each and every time they interact with one of our local retailers. That’s why every purchase, check-in and feedback rating, and more, will result in loyalty point rewards that can be cashed in for some amazing free gift cards.  </p>
+							<div class="col-sm-8">
+								<div class="wrapper">
+									<div class="inner-wrapper">
+										<div class="block-sec">
+											<div class="inner-text">
+												<div class="store-sec ic_click_sec">
+													<h4 class="Ic_Rewards">ORDER DELIVERY OR COLLECTION </h4>
+													<p>Find local takeaway or delivery venues, browse their menus, customize your order and pay in moments – all without leaving the sofa. </p>
+												</div>
+											</div>
+										</div>
+									</div>
 								</div>
 							</div>
 						</div>
@@ -117,10 +165,18 @@
 				<div class="hsContent" data--50-bottom="opacity: 0;" data--200-bottom="opacity:0;" data-center="opacity: 1" data-200-top="opacity: 1" data-anchor-target="#slide-6">
 					<div class="container">
 						<div class="row">
-							<div class="col-sm-7 col-sm-offset-5">
-								<div class="store-sec">
-									<h4 class="ic_table">Special offers</h4>
-									<p>We are working with some amazing local retailers, who provide us with exclusive offers to pass onto SWOOPE customers. So keep your eyes peeled on the deals and voucher section because there are some real ££££’s to be saved in your favorite stores.     </p>
+							<div class="col-sm-8 col-sm-offset-4">
+								<div class="wrapper">
+									<div class="inner-wrapper">
+										<div class="block-sec">
+											<div class="inner-text">
+												<div class="store-sec">
+													<h4 class="ic_table">GET REWARDED</h4>
+													<p>For every penny you spend, venue you visit, review you give - earn loyalty points that can be cashed in for local vouchers or gift cards for national retailers. </p>
+												</div>
+											</div>
+										</div>
+									</div>
 								</div>
 							</div>
 						</div>
@@ -136,10 +192,18 @@
 				<div class="hsContent" data-bottom-top="opacity: 0" data-100p-top="opacity: 0" data-top="opacity: 1"  data-anchor-target="#slide-7">
 					<div class="container">
 						<div class="row">
-							<div class="col-sm-7">
-								<div class="store-sec pre_order">
-									<h4 class="ic_clock">Pre order (no queuing)  </h4>
-									<p>So good we had to mention it twice! Order before you arrive and beat the queue, giving you more time to shop. It really is the future of shopping on the go. That morning coffee has never been in your hand so quick and effortlessly. Only turn up when it’s ready for collection (you will receive a push notification). Spend more time doing what makes you happy (retail therapy with friends).    </p>
+							<div class="col-sm-8">
+								<div class="wrapper">
+									<div class="inner-wrapper">
+										<div class="block-sec">
+											<div class="inner-text">
+												<div class="store-sec pre_order">
+													<h4 class="ic_clock">FIND EXCLUSIVE OFFERS</h4>
+													<p>We work with local venues to secure exclusive offers for SWOOPE customers. So download the app now to find unmissable deals near you. </p>
+												</div>
+											</div>
+										</div>
+									</div>
 								</div>
 							</div>
 						</div>
@@ -153,20 +217,28 @@
 			<div class="hsContainer">
 				<div class="hsContent" data--50-bottom="opacity: 0;" data--200-bottom="opacity:0;" data-center="opacity: 1" data-200-top="opacity: 1" data-anchor-target="#slide-8">
 					<div class="container">
-						<div class="store-sec transaction">
-							<h4 class="ic_Secure">Secure Transactions</h4>
-							<p>All our payments are PCI compliant and are done by some of the biggest service providers in the world. So you are in safe hands. In fact Mobile payments are actually one of the safest forms of transactions because of the added layer of security, which you don’t get with straight cash or card payments.  </p>
-						</div>
-						<div class="gift-card card">
-							<ul>
-								<li><img src="/assets/Paypal_icon.png"></li>
-								<li><img src="/assets/MasterCard_icon.png"></li>
-								<li><img src="/assets/visa_icon.png"></li>
-								<li><img src="/assets/concardis_icon.png"></li>
-								<li><img src="/assets/transactworld_icon.png"></li>
-								<li><img src="/assets/pay_icon.png"></li>
-								<li><img src="/assets/AMEX_icon.png"></li>
-							</ul>
+						<div class="wrapper">
+							<div class="inner-wrapper">
+								<div class="block-sec">
+									<div class="inner-text">
+										<div class="store-sec transaction">
+											<h4 class="ic_Secure">SECURE TRANSACTIONS </h4>
+											<p>All our payments are PCI compliant and are done by some of the biggest service providers in the world. So you are in safe hands. In fact Mobile payments are actually one of the safest forms of transactions because of the added layer of security, which you don’t get with straight cash or card payments.</p>
+										</div>
+										<div class="gift-card card">
+											<ul>
+												<li><%=image_tag("Paypal_icon.png")%></li>
+												<li><%=image_tag("pay_icon.png")%></li>
+												<li><%=image_tag("MasterCard_icon.png")%></li>
+												<li><%=image_tag("visa_icon.png")%></li>
+												<li><%=image_tag("concardis_icon.png")%></li>
+												<li><%=image_tag("transactworld_icon.png")%></li>
+												<li><%=image_tag("AMEX_icon.png")%></li>
+											</ul>
+										</div>
+									</div>
+								</div>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -176,10 +248,11 @@
 	<section class="store-btn-sec">
 		<div class="">
 			<div class="store-sec center">
-				<h4 class="store-availability">Available on App Store and Google Play</h4>
+				<h4 class="store-availability">Download now on the App Store or Google Play</h4>
 				<div class="store-btn clearfix">
-					<a href="https://itunes.apple.com/gb/app/id1088581826" target="_blank"><i class="fa fa-apple"></i> App Store</a> 
-					<a href="#"><i class="fa fa-android"></i> Google Play</a>
+				<%=link_to image_tag("app-store.png"),"https://itunes.apple.com/gb/app/id1088581826"%>
+
+				<%=link_to image_tag("g-store.png"),"https://play.google.com/store/apps/details?id=swoope.co.uk&amp;hl=en"%>
 				</div>
 			</div>
 		</div>

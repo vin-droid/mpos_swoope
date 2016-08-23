@@ -1,35 +1,66 @@
-<div id="fb-root"></div>
-<!-- Default-->
 <header>
   <nav class="navbar navbar-default sticky">
    <div class="container">
-    <div class="row">
-     <div class="col-xs-12 col-sm-5 col-md-5 col-lg-5">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
              <span class="icon-bar"></span>
              <span class="icon-bar"></span>
              <span class="icon-bar"></span>
           </button>
-      <a href="#" class="logo work-logo"><img src="/assets/logo.png"/></a>
+       <a href="#" class="logo work-logo hidden-large"><img src="assets/logo.png"/></a>
     </div>
-     </div>
-     <div class="col-xs-12 col-sm-7 col-md-7 col-lg-7">
+    
+
     <div class="collapse navbar-collapse work-navbar" id="myNavbar">
-          <ul class="nav navbar-nav work-nav">
-          <% if params[:action] == "how_it_works" %>
-            <li><a href="/index">Home</a></li>
-            <li class="active"><a href="/how_it_works">How it works?</a></li>
-            <% elsif params[:action] == "index" %>
-            <li class="active" ><a href="/index">Home</a></li>
-            <li ><a href="/how_it_works">How it works?</a></li>
-            <% else %>
-            <li><a href="/index">Home</a></li>
-            <li><a href="/how_it_works">How it works?</a>
-            <% end %>
+          <ul class="nav navbar-nav work-nav pull-left">
+             <% if params[:action] == "index" && params[:controller]=="homes" %>
+              <li class="active"><a href="/index">Home</a></li>
+              <li><a href=" /how_it_works">How it works</a></li>
+              <li><a href="/our_story">Our Story</a></li>
+              <li><a href="/vanues">Vanues</a></li>
+              <li><a href="/blog">Blog</a></li>
+              
+            <% elsif params[:action] == "how_it_works" && params[:controller]=="homes"%>
+              <li><a href="/index">Home</a></li>
+              <li class="active"><a href=" /how_it_works">How it works</a></li>
+              <li><a href="/our_story">Our Story</a></li>
+              <li><a href="/vanues">Vanues</a></li>
+              <li><a href="/blog">Blog</a></li>
+             
+            <% elsif params[:action] == "our_story" && params[:controller]=="homes"%>
+              <li><a href="/index">Home</a></li>
+              <li><a href=" /how_it_works">How it works</a></li>
+              <li  class="active"><a href="/our_story">Our Story</a></li>
+              <li><a href="/vanues">Vanues</a></li>
+              <li><a href="/blog">Blog</a></li>
+            
+            <% elsif params[:action] == "index" && params[:controller]=="vanues" %>
+              <li><a href="/index">Home</a></li>
+              <li><a href=" /how_it_works">How it works</a></li>
+              <li><a href="/our_story">Our Story</a></li>
+              <li  class="active"><a href="/vanues">Vanues</a></li>
+              <li><a href="/blog">Blog</a></li>
+            
+            <% elsif params[:action] == "blog" && params[:controller]=="homes"%>
+              <li><a href="/index">Home</a></li>
+              <li><a href=" /how_it_works">How it works</a></li>
+              <li><a href="/our_story">Our Story</a></li>
+              <li><a href="/vanues">Vanues</a></li>
+              <li class="active"><a href="/blog">Blog</a></li>
+              <%else%>
+               <li class="active"><a href="/index">Home</a></li>
+                <li><a href=" /how_it_works">How it works</a></li>
+                <li><a href="/our_story">Our Story</a></li>
+                <li><a href="/vanues">Vanues</a></li>
+                <li><a href="/blog">Blog</a></li>
+            <%end%>
          </ul>
-        </div>
-     </div>
+     
+     <ul class="social-share pull-right right">
+      <li><a target="_black" href="https://www.facebook.com/Swoope-966658816749794"><i class="fa fa-facebook"></i></a></li>
+      <li><a target="_black" href=""><i class="fa fa-twitter"></i></a></li>
+      <li><a target="_black" href=""><i class="fa fa-instagram"></i></a></li>
+    </ul>
     </div>
    </div>
   </nav>

@@ -1,0 +1,129 @@
+<main>
+	<section id="slide-1" class="homeSlide">
+		<div class="bcg blog" data-center="background-position: 50% 0px;" data-top-bottom="background-position: 50% -100px;" data-anchor-target="#slide-1">
+			<div class="hsContainer" >
+				<div class="hsContent slide-1" data-center="bottom: 200px; opacity: 1" data-top="bottom:1200px; opacity:0.3" data-anchor-target="#slide-1" >
+					<div class="container">
+						<div class="wrapper">
+							<div class="inner-wrapper">
+								<div class="block-sec">
+									<div class="inner-text">
+										<div class="store-sec left">
+											<h1 class="store-availability center">BLOG</h1>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section class="blog-area">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-9 col-sm-8 p-r-15">
+				<article> 
+				
+				  <% if @blogs.present?%>
+				  <% @blogs.each do |blog| %>
+					<section class="blog-sec clearfix">
+						<div class="blog-title">
+						 <%= blog.title %>
+						</div>
+						<div class="post-date">
+							<div class="post-calender"> <%=blog.created_at.strftime("%A, %B %e, %Y")%>
+						</div>
+							<div class="post-share">
+								<%share_social="share-for-#{blog.id}"%>
+								<%share_social_content="share-content-for-#{blog.id}"%>
+								<a id='<%=share_social%>'> share </a>
+								<div id='<%=share_social_content%>' class="share-content" style="display:none;">
+	              				 <%= social_share_button_tag(blog.title, :url => "http://swoopos.com/homes/blogs" ,:font_size=>10, :rel => "twipsy") %>
+	              				 
+								</div>
+							   </div>
+						</div>
+						<div class="post-picture clearfix">
+							<%= blog.image.present? ? image_tag(blog.image.url) : "" %>
+						</div>
+						<div class="post-content clearfix">
+							<p><%=raw(blog.description.gsub(/<.*?>/, "").truncate(400, omission: '..... (continued)'))%></p>
+								 <div class="read-more-block">
+									<p>
+									<%=raw(blog.description)%>
+										</p><p>
+										<%=link_to"www.swoopos.com","", class:"swoopos-link"%>
+										</p>
+										<div class="comment-sec clearfix">
+										<%=link_to"COMMENT","", class:"btn btn-hero btn-lg pull-left"%>
+										<a class="pull-right count-comnt-link" href=""><i class="fa fa-weixin" aria-hidden="true"></i>
+
+										 <%count_comment="count-comment-#{blog.id}"%>
+										<span class="count-comnt <%= count_comment%>"><%=blog.comments.count%></span> comments</a>
+										</div>
+
+										<%cls="comments-for-#{blog.id}"%>
+										  <div class='comments-view <%=cls%>'>
+										  <%= render :partial => 'comment' , :collection=> blog.comments%>
+											</div> 
+										<div class="comments-view">
+										  <%= form_for :comment, url: comment_path(blog), :remote=>true do |f| %>
+									    <div class="form-group">
+									     
+							    	  <%= f.text_area :content, class: 'form-control input-lg', placeholder: "Comment", :required =>true , id:"comment-input-#{blog.id}"%>
+							    </div>
+							    <%= f.submit 'Comment',  class: 'btn bg-becon' %>             
+							  <% end %>
+								</div>
+							</div>
+							
+							<span class="more-detail read-more"> More </span>
+						</div>
+					 
+					</section>
+					
+
+					<% end %>
+				<% end%>
+				</article>
+			</div>
+			<div class="col-md-3 col-sm-4 p-l-15">
+				<aside>
+					<div class="search-blog">
+					<%= search_form_for @search, url: blog_path do |f| %>
+			        <%= f.text_field :title_cont, :autofocus=>true,placeholder: "Search the blog" %>
+			       
+			        <% end %>
+
+						<!-- <input type="text" placeholder="Search the blog" name="search"> -->
+					 </div>
+					   <div class="article-feature">
+						<div class="article-title">
+							FEATURED ARTICLES 
+						</div>
+						<% @blogs.first(5).each do |blog| %>
+							<div class="article-content">
+								<p><%=blog.title%></p>
+							 </div>
+						<% end %> 
+					</div>
+				</aside>
+			</div>
+		</div>
+		<%= paginate @blogs %>
+	</div>
+</section>
+
+</main>
+
+<script type="text/javascript">
+	$(document).ready(function(){
+		$('[id^=share-for-]').click(function(){
+					var toggle  = document.getElementById($(this).attr('id'));
+					var content = document.getElementById($(this).siblings('div').attr('id'));		
+					content.style.display = (content.dataset.toggled ^= 1) ? "block" : "none";
+			  });
+	});
+</script>

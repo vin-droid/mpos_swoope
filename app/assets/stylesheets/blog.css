@@ -1,0 +1,24 @@
+/*
+  Place all the styles related to the matching controller here.
+  They will automatically be included in application.css.
+*/
+.comment-area {
+    background: #fff none repeat scroll 0 0;
+    padding-top: 0.5em;
+}
+.comments-view {
+    padding: 0 0 15px;
+}
+.comment-area-hr {
+    background: #e7e7e7 none repeat scroll 0 0;
+    border-radius: 4px;
+    font-size: 14px;
+    line-height: 26px;
+    padding: 5px 10px;
+}
+.btn.bg-becon{background:#39c7db;color:#fff;line-height: 26px;border-radius: 4px;padding: 5px 10px;}
+.comment-sec {
+    border-left: 0 none;
+    border-right: 0 none;
+    border-top: 1px solid #999999;
+}
